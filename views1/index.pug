@@ -1,0 +1,57 @@
+doctype <!DOCTYPE html>
+html(lang="en")
+    head
+        link(rel="stylesheet",href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        title First pug Template
+    body
+        div.row.justify-content-center
+            div.col-md-6
+                header.card-header
+                    h4.card-title Registration
+                form(method="POST" action="/thanks")
+                    div.form-row
+                        div.col.form-group
+                            label First name
+                            input.form-control(name="firstname")
+                        div.col.form-group
+                            label Last name
+                            input.form-control(name="lastname")
+                    div.form-group
+                        label(for="email")
+                        input.form-control(type="email" name = "email")
+                        small.form-text.text-muted We'll never share your email with anyone else.
+                    div.form-group
+                        label.form-check.form-check-inline
+                            input.form-check-input(type="radio" name="gender" value="Female")
+                            span.form-check-label Female
+
+                        label.form-check.form-check-inline
+                            input.form-check-input(type="radio" name="gender" value="Male")
+                            span.form-check-label Male
+                            
+                            
+                    div.form-row
+                        div.col.form-group
+                            label City
+                            input.form-control(name="city")
+                    
+                        div.col.form-group
+                            label Country
+                                select.form-control
+                                    option(value="uganda") Uganda
+                                    option(value="Uzbekistan") Uzbekistan
+                                    option(value="Russia") Russia
+                                    option(value="India") India
+                                    option(value="Afghanistan") Afghanistan
+                    div.form-group
+                        label Create password
+                        input.form-control(type="password")
+
+                    div.form-group
+                        button.btn.btn-primary.btn-block(type="submit") Register
+                            
+                        small.text-muted By clicking the 'Sign Up' button, you confirm that you accept our Terms of use and Privacy Policy
+
+                div.border-top.card-body.text-center Have an account? 
+                    a(href="") Log In
+                   
