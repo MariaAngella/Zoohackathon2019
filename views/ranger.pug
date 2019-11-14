@@ -5,16 +5,19 @@ block content
             div.col-md-5
                 div.card-body.border
                     header.card-header  
-                        h4.card-title Informer's data
+                        h4.card-title Welcome Ranger
                     table.table
                         thead.thead-dark
                             tr
-                                th Firstname
-                                th Lastname
-                                th City
+                                th Crime Name
+                                th Crime Location
+                                th Crime Decription
+                                th Confirm Crime Below
                             tbody
                                 each informer in informers
-                                    tr
+                                    tr 
                                         td #{informer.firstname}  
                                         td #{informer.lastname} 
-                                        td #{informer.city} 
+                                        td #{informer.city}
+                                        td 
+                                            button.btn.btn-primary.btn-block(type="confirm") Confirm Crime   

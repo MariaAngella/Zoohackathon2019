@@ -1,13 +1,15 @@
 /* require is a keyword used to use a package and below are the packages */
 const express = require("express");
 const path = require("path");
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser");//middleware-----function that will always run when the path is hit
 const mongoose = require("mongoose");
 
 const app = express(); // now we have our express app
 app.set("view engine", "pug"); //setting the view engine as pug
 app.set("views", path.join(__dirname, "views")); //there's a folder called views and this is how to get it
 app.use(bodyParser.urlencoded({ extended: true })); //for geting the posted data from the form in the console/body and the output is json
+
+app.use(express.static(path.join(__dirname, "public")));
 
 /* mongoose db connection */
 mongoose.Promise = global.Promise;
@@ -34,6 +36,11 @@ app.get("/report", (req, res) => {
   res.render("informer");
 });
 
+
+
+
+
+
 //extracts all data for the database and displays it
 app.post("/report", (req, res) => {
   const informer = new Informer(req.body); //create an instance of the Register model for data entered(req.body==got from the user)
@@ -52,6 +59,18 @@ app.post("/report", (req, res) => {
       res.status(500).send("unable to save to database");
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* listening for requests: the server */
 app.listen(5000, function() {

@@ -5,61 +5,75 @@ block content
         div.col-md-5
             div.card-body.border
                 header.card-header
-                    h4.card-title.text-center.pt-1 Informer's Page
+                    h4.card-title.text-center.pt-1 Are you an Informer?
                 article.card-body
                 form(method="POST" action="/report")
                     div.form-row
                         div.col.form-group
-                            label First name
-                            input.form-control( name="firstname")
-                    
+                            label Please Enter Your Phone number
+                            input.form-control(name="phone" placeholder="For Mobile Money:")
+
                         div.col.form-group
-                            label Last name
-                            input.form-control( name="lastname")
+                            label Name the Crime
+                            input.form-control( name="firstname" placeholder="Enter name for Crime:")
+                            
+                    div.form-row
+                        div.col.form-group
+                            label Select Animal in Danger
+                            select#inputState.form-control(name="lastname1")
+                                option Choose...
+                                option(value="Antelop")  Antelop
+                                option(value="Elephant") Elephant
+                                option(value="Pangolin"  selected) Pangolin
+                                option(value="Rhino") Rhino
+                        div.col.form-group
+                            label Please Describe the Crime Activity
+                            textarea.form-control(name="city" cols="30", rows="5" placeholder="Please enter the details for the crime activity here:")        
+                                
                     //- form-row end
-                    div.form-row
-                        div.col.form-group
-                            label Email address
-                            input.form-control( name="emailaddress")
-                            small.form-text.text-muted We'll never share your email with anyone else.
+                    
+                        
                     
                     div.form-row
                         div.col.form-group
-                            label.form-check.form-check-inline
+                            label.form-check.form-check-inline Do you know the Criminal? 
+                        div.form-row
+                            div.col.form-group
                                 input.form-check-input(type="radio" name="gender" value="male")
-                                span.form-check-label Male
+                                span.form-check-label Yes
                         div.col.form-group
                             label.form-check.form-check-inline
                                 input.form-check-input(type="radio" name="gender" value="female")
-                                span.form-check-label Female
+                                span.form-check-label No
                     //- form-group end
 
                     div.form-row
                         div.form-group.col-md-6
-                            label Country
+                            label Upload a Video or Picture
                             input.form-control(type="text" name="country")
 
                         div.form-group.col-md-6
-                            label City
-                            select#inputState.form-control(name="city")
+                            label Please Enter Location
+                            select#inputState.form-control(name="lastname")
                                 option Choose...
-                                option(value="Nairobi") Nairobi
-                                option(value="Kampala" selected) Kampala
-                                option(value="Dar-es Salaam") Dar-es Salaam
-                                option(value="Kigali")  Kigali
-                                option(value="Bujumbura")  Bujumbura
-                    div.form-row
-                        div.col.form-group
-                            label Create password
-                            input.form-control(type="password" name="password")
-                    div.form-row
-                        div.col.form-group
-                            button.btn.btn-primary.btn-block(type="submit") Register
+                                option(value="Murchison Falls National Park" selected) Murchison Falls National Park
+                                option(value="Queen Elizabeth National Park" ) Queen Elizabeth National Park
+                                option(value="Kibale National Park") Kibale National Park
+                                option(value="Bwindi Impenetrable National Park")  Bwindi Impenetrable National Park
+                                option(value="Lake Mburo National Park")  Lake Mburo National Park
+                    
                         
                     div.form-row
-                        small.col.text-muted By clicking the 'Sign Up' button, you confirm that you accept our 
-                           <br> Terms of use and Privacy Policy.
-                            
+                        div.col.form-group
+                            button.btn.btn-primary.btn-block(type="submit") Submit
+                        
+                    div.form-row
+                        small.col.text-muted By clicking the 'Submit' button, you confirm that you accept our Terms of use and Privacy Policy.
+                        br
+                    div.form-row       
+                        div.col.form-group
+                            label Redeem your Prize
+                                button.btn.btn-primary.btn-block(type="redeem") Redeem your Prize    
                             
                                         
                 //- End of form
