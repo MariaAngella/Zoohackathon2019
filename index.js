@@ -49,7 +49,7 @@ app.post("/informer", (req, res) => {
       Informer.find().then(
         //query the collection
         items => {
-          res.render("touristfb", { informers: items }); //{users:items}--variable name users---passes all the items to the next page/for i.e list
+          res.render("tourist", { informers: items }); //{users:items}--variable name users---passes all the items to the next page/for i.e list
         }
       );
     })
