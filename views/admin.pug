@@ -5,16 +5,15 @@ block content
             div.col-md-7
                 div.card-body.border
                     header.card-header  
-                        h4.card-title Welcome Ranger Opio
-                            small.text-muted      Please Confirm Crimes Below!!!
+                        h4.card-title Welcome Admin
                     table.table
                         thead.thead-dark
                             tr
                                 th Crime Name
                                 th Crime Location
                                 th Crime Decription
-                                th Your Crime Decription
-                                th Confirm Crime Below
+                                th Choose Ranger
+                                th Assign Crime Below
                             tbody
                                 each informer in informers
                                     tr 
@@ -22,6 +21,12 @@ block content
                                         td #{informer.lastname} 
                                         td #{informer.city}
                                         td 
-                                            textarea.form-control(name="crime" cols="50", rows="3" placeholder="Please enter your details for the crime activity here:")
+                                            select#inputState.form-control(name="ranger")
+                                                option Choose...
+                                                option(value="Maria Angella" ) Maria Angella
+                                                option(value="Kintu Yasin" ) Kintu Yasin
+                                                option(value="Opio Ben" selected) Opio Ben
+                                                option(value="Ritah Green")  Ritah Green
+                                                option(value="David Luke")  David Luke
                                         td 
-                                            button.btn.btn-primary.btn-block(type="confirm") Confirm Crime   
+                                            button.btn.btn-primary.btn-block(type="confirm") Assign Crime   

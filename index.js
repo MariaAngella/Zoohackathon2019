@@ -1,3 +1,4 @@
+
 /* require is a keyword used to use a package and below are the packages */
 const express = require("express");
 const path = require("path");
@@ -13,7 +14,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 /* mongoose db connection */
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/zooahackerthon"); //
+mongoose.connect("mongodb://localhost:27017/zooahackerthon"); 
 
 /* Creating a Database Schema....schema should be the same format as req.body */
 const registerSchema = new mongoose.Schema({
@@ -32,25 +33,23 @@ const Informer = mongoose.model("Informer", registerSchema);
 
 /* Routes */
 //Get reads the registerform.pug and displays it on the path
-app.get("/report", (req, res) => {
+app.get("/informer", (req, res) => {
   res.render("informer");
 });
 
 
 
-
-
-
 //extracts all data for the database and displays it
-app.post("/report", (req, res) => {
+app.post("/informer", (req, res) => {
   const informer = new Informer(req.body); //create an instance of the Register model for data entered(req.body==got from the user)
-  informer.save() //and the model is the one saved to the database
+  informer
+    .save() //and the model is the one saved to the database
     .then(item => {
       //.then promise and used because nodejs asyncronously waits
       Informer.find().then(
         //query the collection
         items => {
-          res.render("tourist", { informers: items }); //{users:items}--variable name users---passes all the items to the next page/for i.e list
+          res.render("touristfb", { informers: items }); //{users:items}--variable name users---passes all the items to the next page/for i.e list
         }
       );
     })
@@ -59,14 +58,6 @@ app.post("/report", (req, res) => {
       res.status(500).send("unable to save to database");
     });
 });
-
-
-
-
-
-
-
-
 
 
 
