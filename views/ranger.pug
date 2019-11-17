@@ -16,6 +16,7 @@ block content
                                 th Your Crime Decription
                                 th Confirm Crime Below
                             tbody
+                                
                                 each informer in informers
                                     tr 
                                         td #{informer.firstname}  
@@ -24,4 +25,4 @@ block content
                                         td 
                                             textarea.form-control(name="crime" cols="50", rows="3" placeholder="Please enter your details for the crime activity here:")
                                         td 
-                                            button.btn.btn-primary.btn-block(type="confirm") Confirm Crime   
+                                            a.btn.btn-primary.btn-block(href="/rangerfb/"+ informer.id) Confirm Crime      

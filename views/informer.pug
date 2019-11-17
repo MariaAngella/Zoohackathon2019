@@ -50,8 +50,9 @@ block content
                     div.form-row
                         div.form-group.col-md-6
                             label Upload a Video or Picture
-                            input.form-control(type="text" name="country")
-
+                                //- form(action="/uploadPhoto" enctype="multipart-form-data")
+                                //-     input.form-control(type="file" name="myPhoto" accept="image/*")
+                                //-     input(type="submit" value="Upload Photo")
                         div.form-group.col-md-6
                             label Please Enter Location
                             select#inputState.form-control(name="lastname")
